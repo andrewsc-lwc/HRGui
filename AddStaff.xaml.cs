@@ -97,13 +97,19 @@ namespace WpfDemo
                     }
                     catch 
                     { 
-                        MessageBox.Show("Ensure that all fields are filled"); //And data type! Add to message
-                    }                       
-                    
+                        MessageBox.Show("Ensure that all fields are filled and the correct data type"); //And data type! Add to message
+                    }                    
                     break;
                 case 1:
-                    Coach coach1 = new Coach(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, coachPosition.Text);
-                    MessageBox.Show(coach1.DisplayInfo());
+                    try
+                    {
+                        Coach coach1 = new Coach(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, coachPosition.Text);
+                        MessageBox.Show(coach1.DisplayInfo());
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ensure that all fields are filled and the correct data type"); //And data type! Add to message
+                    }
                     break;
                 case 2:
                     try
@@ -113,7 +119,7 @@ namespace WpfDemo
                     }
                     catch
                     {
-                        MessageBox.Show("Ensure that all fields are filled");
+                        MessageBox.Show("Ensure that all fields are filled and the correct data type"); //And data type! Add to message
                     }
                     break;
                 case 3:
@@ -124,7 +130,7 @@ namespace WpfDemo
                     }
                     catch
                     {
-                        MessageBox.Show("Ensure that all fields are filled");
+                        MessageBox.Show("Ensure that all fields are filled and the correct data type"); //And data type! Add to message
                     }
                     break;
             }

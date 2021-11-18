@@ -9,9 +9,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -24,7 +23,8 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,10" Text="HR App" Foreground="#FF6FA80C" Background="#FFF0E616"  />
-        <Button x:Name="addJobsOption" Grid.Column="1" Grid.Row="3" Content="Select Job to add to" Click="submitComboBoxJobs_Click"/>
+        <TextBlock Grid.Column="2" Grid.Row="1" Margin="0,10,0,10" Text="HR App" Foreground="#FF6FA80C" Background="#FFF0E616"  />
+        <Button x:Name="addJobsOption" Grid.Column="2" Grid.Row="3" Content="Select Job to add to" Click="submitComboBoxJobs_Click"/>
+        
     </Grid>
 </Window>

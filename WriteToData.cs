@@ -34,7 +34,13 @@ namespace WpfDemo
             this.playerValue = playerValue;
             this.coachPosition = coachPosition;
             this.physioSpeciality = physioSpeciality;
-            AddPlayer();
+            switch (type)
+            {
+                case "Player":
+                    AddPlayer();
+                    break;
+            }
+            
         }
         public void AddPlayer()
         {
