@@ -15,9 +15,6 @@ namespace WpfDemo
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            string message;
-            TestClass x = new TestClass();
-            message = x.myValue();
             new MainWindow().Show();
         }
     }

@@ -88,21 +88,44 @@ namespace WpfDemo
             switch (choice)
             {
                 case 0:
-                    Player player1 = new Player(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, playerPosition.Text, Convert.ToInt32(playerGoals.Text), Convert.ToInt32(playerValue.Text));
-                    MessageBox.Show(player1.DisplayInfo());
-                    this.Close();
+                    //The object call creates an object. This is done simply to ensure that the object is going to be valid before writing.
+                    try
+                    {
+                        new Player(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, playerPosition.Text, Convert.ToInt32(playerGoals.Text), Convert.ToInt32(playerValue.Text));
+                        new WriteToData("Player", staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, playerPosition: playerPosition.Text, playerGoals: Convert.ToInt32(playerGoals.Text), playerValue: Convert.ToInt32(playerValue.Text));
+                        MessageBox.Show("Player added successfully");
+                    }
+                    catch 
+                    { 
+                        MessageBox.Show("Ensure that all fields are filled"); //And data type! Add to message
+                    }                       
+                    
                     break;
                 case 1:
                     Coach coach1 = new Coach(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, coachPosition.Text);
                     MessageBox.Show(coach1.DisplayInfo());
                     break;
                 case 2:
-                    Physio physio1 = new Physio(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, physioSpeciality.Text);
-                    MessageBox.Show(physio1.DisplayInfo());
+                    try
+                    {
+                        Physio physio1 = new Physio(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text, physioSpeciality.Text);
+                        MessageBox.Show(physio1.DisplayInfo());
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ensure that all fields are filled");
+                    }
                     break;
                 case 3:
-                    Cleaner cleaner1 = new Cleaner(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text);
-                    MessageBox.Show(cleaner1.DisplayInfo());
+                    try
+                    {
+                        Cleaner cleaner1 = new Cleaner(staffName.Text, Convert.ToInt32(staffWages.Text), staffDOB.Text, staffEmail.Text);
+                        MessageBox.Show(cleaner1.DisplayInfo());
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ensure that all fields are filled");
+                    }
                     break;
             }
         }
