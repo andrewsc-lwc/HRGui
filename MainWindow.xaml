@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemo"
         mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI"
-        Title="Rubbish Window" Height="450" Width="800">
+        Title="Rubbish Window" Height="450" Width="800" KeyDown="Move_Rect">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -25,6 +25,8 @@
 
         <TextBlock Grid.Column="2" Grid.Row="1" Margin="0,10,0,10" Text="HR App" Foreground="#FF6FA80C" Background="#FFF0E616"  />
         <Button x:Name="addJobsOption" Grid.Column="2" Grid.Row="3" Content="Select Job to add to" Click="submitComboBoxJobs_Click"/>
-        
+        <Canvas Grid.Column="2" Grid.Row="4">
+            <Rectangle x:Name="myRectangle" Fill="DarkBlue" Canvas.Left="75" Canvas.Top="50" Width="75" Height="40" />
+        </Canvas>
     </Grid>
 </Window>

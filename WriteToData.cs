@@ -46,7 +46,7 @@ namespace WpfDemo
         {
             string filename = "\\players.txt";
             TextWriter writeFile = new StreamWriter(folder + filename,true);
-            writeFile.WriteLine((name+","+wages+ "," + dob + "," + email + "," + playerPosition + "," + playerGoals + "," + playerValue));
+            writeFile.WriteLine(name+","+wages+ "," + dob + "," + email + "," + playerPosition + "," + playerGoals + "," + playerValue);
             writeFile.Flush();
             writeFile.Close();
         }

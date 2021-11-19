@@ -56,5 +56,30 @@ namespace WpfDemo
             Physio physio1 = new Physio("James Jones", 15000, "30 / 02 / 1967", "jonesj@lordwandsworth.org", "Muscle");
             Console.WriteLine(physio1.DisplayInfo());
         }
+
+        private void Move_Rect(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Right)
+            {                
+                var x = Canvas.GetLeft(myRectangle);
+                Canvas.SetLeft(myRectangle, x + 2);
+            }
+            else if (e.Key == Key.Left)
+            {                
+                var x = Canvas.GetLeft(myRectangle);
+                Canvas.SetLeft(myRectangle, x - 2);
+            }
+            else if (e.Key == Key.Up)
+            {
+                var y = Canvas.GetTop(myRectangle);
+                Canvas.SetTop(myRectangle, y - 2);
+            }
+            else if (e.Key == Key.Down)
+            {
+                var y = Canvas.GetTop(myRectangle);
+                Canvas.SetTop(myRectangle, y + 2);
+            }
+
+        }
     }
 }
